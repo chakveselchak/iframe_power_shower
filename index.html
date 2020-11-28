@@ -21,6 +21,8 @@
     <section class="slide" id="cover">
         <h2>Сила iframe</h2>
         <p>Швейцарский нож в руках фронтендера</p>
+        <p class="copyright_cover">Кузнецов Андрей, </br>
+            <a href="https://rbs-payments.ru">РБС</a>, Frontend Lead</p>
         <figure>
             <figcaption class="copyright right white">
                 <a href="https://ilovedraw.com">Kuznetsov Andrey</a>
@@ -34,6 +36,13 @@
                 font-size: 70px;
             }
 
+            #cover .copyright_cover {
+                position: absolute;
+                right: 70px;
+                bottom: 50px;
+                text-align: right;
+            }
+
             #cover p {
                 margin: 10px 0 0;
                 text-align: center;
@@ -42,10 +51,15 @@
                 font-size: 20px;
             }
 
+            #cover a {
+                text-decoration: none;
+                background: none;
+            }
+
             #cover p a {
                 color: black;
             }
-            
+
             #cover {
                 background-image: url('pictures/slide1/hole.svg');
                 background-repeat: no-repeat;
@@ -54,16 +68,42 @@
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Shower key features</h2>
+    <section class="slide" id="about">
+        <h2>Кто и чем занимаюсь</h2>
         <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
+            <li>Верстал с 2005 года</li>
+            <li>До 2012 года Flasher-фрилансер <img src="pictures/slide2/flash.png" width="30" alt="" class="icon_flash"></img></li>
+            <li>С 2012 ушел в frontend разработку</li>
+            <li>Последние 3 года Frontend Lead в компании "Рунет Бизнес Системы"</li>
         </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+
+
+        <style>
+            #about .icon_flash {
+                position: relative;
+                top: 6px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="about_company">
+        <h2>Пару слов о компании</h2>
+        <ol>
+            <li>Сервис для банков в области ecom'а.</li>
+            <li>White Label решения</li>
+            <li>Высокие требования к качеству и безопасности функционала</li>
+        </ol>
+
+        <img src="pictures/slide2/logo_color.svg" alt="" class="logo_rbs">
+
+        <style>
+            #about_company .logo_rbs {
+                position: absolute;
+                right: 50px;
+                bottom: 50px;
+                width: 200px;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -176,7 +216,7 @@
 
     <section class="slide">
         <h2>Demo!</h2>
-        <portal src="https://securepayments.sberbank.ru/mportal3/auth/login" id="portal"></portal>
+        <portal src="https://securepayments.sberbank.ru/mportal3" id="portal"></portal>
         <script>
             const portal = document.getElementById('portal');
             portal.addEventListener('click', evt => {
