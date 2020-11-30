@@ -142,37 +142,185 @@
 
 
     <section class="slide">
-        <h2>Two columns if you like</h2>
-        <div class="columns two">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </div>
+        <h2>Итого на 2020 год</h2>
+        <ul>
+            <li>Полностью изолирован от родительского документа</li>
+            <li class="next">Свой собственный объект window</li>
+            <li class="next">Не показывает изменение урла для родителя (если разные домены)</li>
+            <li class="next">Но он всё также может <s>сломать страницу</s> мешать пользователю</li>
+        </ul>
     </section>
 
-    <section class="slide">
-        <h2>All kind of lists</h2>
-        <ol>
-            <li>Simple lists are marked with bullets</li>
-            <li>Ordered lists begin with a number</li>
-            <li>You can even nest lists one inside another
-                <ul>
-                    <li>Or mix their types</li>
-                    <li>But do not go too far</li>
-                    <li>Otherwise audience will be bored</li>
-                </ul>
-            </li>
-            <li>Look, seven rows exactly!</li>
-        </ol>
+    <section class="slide" id="sandbox">
+        <h2>Sandbox</h2>
+<pre style="color:#000000;background:#ffffff;">
+<code>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">iframe</span><span style="color:#274796; "> </span><span style="color:#074726; ">src</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"..."</span><span style="color:#274796; "> </span><span style="color:#074726; ">sandbox</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"значение"</span><span style="color:#274796; "> </span><span style="color:#a65700; ">/&gt;</span>
+</code>
+</pre>
+        <table>
+            <tr>
+                <th scope="col">Значение</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <th scope="row">(пустое значение)</th>
+                <td>Включить все ограничения</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-forms</th>
+                <td>Разрешить отправку данных форм</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-pointer-lock</th>
+                <td>Разрешить использование Pointer Lock API (захват движения мыши)</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-popups</th>
+                <td>Разрешить всплывающие окна (window.open(), target=”_blank”, и др.)</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-same-origin</th>
+                <td>Разрешить воспринимать контент фрейма, как контент из того же источника</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-scripts</th>
+                <td>Разрешить исполнение скриптов</td>
+            </tr>
+            <tr>
+                <th scope="row">allow-top-navigation</th>
+                <td>Разрешить топ навигацию (родителя)</td>
+            </tr>
+        </table>
+        <style>
+            table {
+                font-size: 0.7em;
+            }
+            #sandbox pre code {
+                line-height: 1;
+            }
+        </style>
     </section>
 
-    <section class="slide">
-        <h2>Serious citations</h2>
-        <figure>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-            </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
-        </figure>
+    <section class="slide" id="clickjacking_demo">
+        <h2>Атака типа clickjacking</h2>
+        <a class="button" href="#">Вы выиграли! <br/> Жмакай!</a>
+
+        <iframe src="https://blog.codepen.io/radio/" width="100%" height="400px"></iframe>
+        <style>
+            #clickjacking_demo .button {
+                background-color: black;
+                color: #fff;
+                display: inline-block;
+                padding: 0px;
+                border-radius: 10px;
+                position: absolute;
+                font-size: 14px;
+                z-index: 10;
+                top: 226px;
+                left: 336px;
+                width: 114px;
+                text-align: center;
+            }
+            #clickjacking_demo .button:hover {
+                cursor: pointer;
+            }
+            #clickjacking_demo iframe {
+                z-index: 999;
+                top: -255px;
+                position: relative;
+                opacity: 0;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="clickjacking_demo2">
+        <h2>Атака типа clickjacking</h2>
+        <a class="button" href="#">Вы выиграли! <br/> Жмакай!</a>
+
+        <iframe src="https://blog.codepen.io/radio/" width="100%" height="400px"></iframe>
+        <style>
+            #clickjacking_demo2 .button {
+                background-color: black;
+                color: #fff;
+                display: inline-block;
+                padding: 0px;
+                border-radius: 10px;
+                position: absolute;
+                font-size: 14px;
+                z-index: 10;
+                top: 226px;
+                left: 336px;
+                width: 114px;
+                text-align: center;
+            }
+            #clickjacking_demo2 .button:hover {
+                cursor: pointer;
+            }
+            #clickjacking_demo2 iframe {
+                z-index: 999;
+                top: -255px;
+                position: relative;
+                opacity: 0.5;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="clickjacking_demo3">
+        <h2>Атака типа clickjacking</h2>
+        <ul>
+            <li>Многие сайты были взломаны подобным способом, включая Twitter, Facebook, Paypal и другие.</li>
+            <li class="next">Clickjacking-атака для кликов мыши, а не для клавиатуры</li>
+            <li class="next">С одной стороны — эта атака «неглубокая», ведь хакер перехватывает только один клик. Но с другой стороны, если хакер
+            знает, что после этого клика появятся другие элементы управления, то он может хитростью заставить пользователя кликнуть
+            на них.</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="clickjacking_demo4">
+        <h2>Защита. Заголовок X-Frame-Options</h2>
+        <h3 class="margin0">DENY</h3>
+        <p>Никогда не показывать страницу внутри фрейма.</p>
+        <h3 class="margin0">SAMEORIGIN</h3>
+        <p>Разрешить открытие страницы внутри фрейма только в том случае, если родительский документ имеет тот же источник.</p>
+        <h3 class="margin0">ALLOW-FROM domain</h3>
+        <p>Разрешить открытие страницы внутри фрейма только в том случае, если родительский документ находится на указанном в заголовке домене.</p>
+
+        <style>
+            h3, p {
+                font-size: 0.8em;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="clickjacking_div">
+        <h2>Защита. Закроемся div</h2>
+<pre style='color:#000000;background:#ffffff;'>
+<code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>></span>
+<code>&nbsp;&nbsp;<span style='color:#808030; '>#</span>protector <span style='color:#800080; '>{</span></code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#bb7977; font-weight:bold; '>height</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span> <span style='color:#bb7977; font-weight:bold; '>width</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>100</span><span style='color:#006600; '>%</span><span style='color:#800080; '>;</span> <span style='color:#bb7977; font-weight:bold; '>position</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>absolute</span><span style='color:#800080; '>;</span></code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#bb7977; font-weight:bold; '>left</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> <span style='color:#bb7977; font-weight:bold; '>top</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> <span style='color:#bb7977; font-weight:bold; '>z-index</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>99999999</span><span style='color:#800080; '>;</span></code>
+<code>&nbsp;&nbsp;<span style='color:#800080; '>}</span></code>
+<code><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>></span></code>
+<code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"protector"</span><span style='color:#a65700; '>></span></code>
+<code>&nbsp;&nbsp;<span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"/"</span><span style='color:#274796; '> </span><span style='color:#074726; '>target</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"_blank"</span><span style='color:#a65700; '>></span>Перейти к сайту<span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>a</span><span style='color:#a65700; '>></span></code>
+<code><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></code>
+<code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></code>
+<code сlass="mark">&nbsp;&nbsp;<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>top<span style='color:#808030; '>.</span>document<span style='color:#808030; '>.</span>domain <span style='color:#808030; '>==</span> document<span style='color:#808030; '>.</span>domain<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span></code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;protector<span style='color:#808030; '>.</span>remove<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code>
+&nbsp;&nbsp;<span style='color:#800080; '>}</span></code>
+<code><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></code>
+</pre>
+<!--Created using ToHtml.com on 2020-11-30 09:59:26 UTC -->
+<!--Created using ToHtml.com on 2020-11-30 09:56:12 UTC -->
+<style>
+    #clickjacking_div pre {
+            font-size: 0.5em;
+        }
+    #clickjacking_div pre code {
+        white-space: normal;
+    }
+</style>
     </section>
 
     <section class="slide">
