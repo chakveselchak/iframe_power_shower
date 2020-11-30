@@ -13,7 +13,7 @@
             text-align: center;
         }
         .margin0 {
-            margin: 0;
+            margin: 0 !important;
         }
     </style>
 </head>
@@ -75,7 +75,7 @@
     </section>
 
     <section class="slide" id="about">
-        <h2>Кто и чем занимаюсь</h2>
+        <h2>Кто я и чем занимаюсь</h2>
         <ol>
             <li>Верстал с 2005 года</li>
             <li>До 2012 года Flasher-фрилансер <img src="pictures/slide2/flash.png" width="30" alt="" class="icon_flash"></img></li>
@@ -95,7 +95,7 @@
     <section class="slide" id="about_company">
         <h2>Пару слов о компании</h2>
         <ol>
-            <li>Сервис для банков в области ecom'а.</li>
+            <li>Сервис в области электронной коммерции</li>
             <li>White Label решения</li>
             <li>Высокие требования к качеству и безопасности функционала</li>
         </ol>
@@ -129,16 +129,22 @@
         </ul>
     </section>
 
+    <section class="slide" id="about_iframe_">
+        <div class="center">
+            <img src="pictures/slide3/menu.jpg" alt="" width="300px"/>
+        </div>
+
+    </section>
+
     <section class="slide" id="about_iframe1">
         <h2>Вспомним прошлое. 2005</h2>
-        <img src="pictures/slide3/2006.png" alt="" height="100%"/>
+        <img src="pictures/slide3/2006.png" alt="" height="70%"/>
     </section>
 
     <section class="slide" id="about_iframe2">
         <h2>Кратко об iFrame</h2>
         <img src="pictures/slide3/schema.png" width="95%"/>
     </section>
-
 
 
     <section class="slide">
@@ -205,8 +211,8 @@
     <section class="slide" id="clickjacking_demo">
         <h2>Атака типа clickjacking</h2>
         <a class="button" href="#">Вы выиграли! <br/> Жмакай!</a>
-
         <iframe src="https://blog.codepen.io/radio/" width="100%" height="400px"></iframe>
+        <img src="pictures/slide_clickjacking/agutin.jpg"  class="agutin"/>
         <style>
             #clickjacking_demo .button {
                 background-color: black;
@@ -230,6 +236,12 @@
                 top: -255px;
                 position: relative;
                 opacity: 0;
+            }
+            #clickjacking_demo .agutin {
+                right: 100px;
+                position: absolute;
+                bottom: 40px;
+                height: 390px;
             }
         </style>
     </section>
@@ -311,8 +323,6 @@
 &nbsp;&nbsp;<span style='color:#800080; '>}</span></code>
 <code><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></code>
 </pre>
-<!--Created using ToHtml.com on 2020-11-30 09:59:26 UTC -->
-<!--Created using ToHtml.com on 2020-11-30 09:56:12 UTC -->
 <style>
     #clickjacking_div pre {
             font-size: 0.5em;
@@ -324,7 +334,21 @@
     </section>
 
     <section class="slide">
-        <h2>Code samples</h2>
+        <h2 class="margin0">Ленивая загрузка</h2>
+        <pre>
+            <code>&lt;!DOCTYPE html&gt;</code>
+            <code class="mark">&lt;html lang="en"&gt;</code>
+            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code><mark>&lt;/head&gt;</mark></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="margin0">Можно ли получить доступ к iframe?</h2>
+        <h4 class="margin0">При условии, что разные домены</h4>
         <pre>
             <code>&lt;!DOCTYPE html&gt;</code>
             <code class="mark">&lt;html lang="en"&gt;</code>
