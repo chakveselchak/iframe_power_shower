@@ -241,7 +241,7 @@
                 right: 100px;
                 position: absolute;
                 bottom: 40px;
-                height: 390px;
+                height: 370px;
             }
         </style>
     </section>
@@ -334,87 +334,130 @@
     </section>
 
     <section class="slide">
-        <h2 class="margin0">Ленивая загрузка</h2>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
+        <h2 class="">Ленивая загрузка</h2>
+        <div class="center">
+            <img src="pictures/slide_lazy/lazy.jpg" alt="" width="600px"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="">Ленивая загрузка</h2>
+        <strong>Loading</strong> поддерживает три значения:
+        <table>
+            <tr>
+                <th scope="row">lazy</th>
+                <td>является хорошим кандидатом для ленивой загрузки.</td>
+            </tr>
+            <tr>
+                <th scope="row">eager</th>
+                <td>не является хорошим кандидатом на ленивую загрузку. Требует загрузки прямо сейчас.</td>
+            </tr>
+            <tr>
+                <th scope="row">auto</th>
+                <td>браузер сам определит, стоит ли загружать лениво.</td>
+            </tr>
+        </table>
+        <p class="note">
+            *auto в настоящее время является нестандартизированным значением, но по умолчанию именно это значение использует Chrome. Google намерен внести предложение по этому значению в таблицу стандартов.
+        </p>
     </section>
 
     <section class="slide">
         <h2 class="margin0">Можно ли получить доступ к iframe?</h2>
         <h4 class="margin0">При условии, что разные домены</h4>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
+        <div class="center">
+            <img src="pictures/slide_message/1.png" alt="" width="330px"/>
+        </div>
     </section>
 
     <section class="slide">
-        <h2>Even tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
+        <h2 class="shout shrink">Можно, если договориться</h2>
     </section>
 
-    <section class="slide" id="picture">
-        <h2>Pictures</h2>
-        <figure>
-            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-            <figcaption class="copyright right white">
-                <a href="https://fiftyfootshadows.net">© John Carey</a>
-            </figcaption>
-        </figure>
+
+    <section class="slide" id="postmessage">
+        <h2>PostMessage и "message"</h2>
+        <pre>
+            <code><mark>otherWindow</mark>.postMessage(<mark>message</mark>, <mark>targetOrigin</mark>);</code>
+        </pre>
+        <div class="content">
+            <div class="next">
+                <strong>otherWindow</strong><br>
+                Ссылка на другое окно. Для iframe это parent
+            </div>
+            <div class="next">
+                <strong>message</strong><br>
+                Данные, которые нужно отправить в другое окно.
+            </div>
+            <div class="next">
+                <strong>targetOrigin</strong><br>
+                Определяет источник для окна-получателя, только окно с данного источника имеет право получить сообщение.
+                <p class="note">Если мы не хотим проверять, то в targetOrigin можно указать *.</p>
+            </div>
+        </div>
         <style>
-            #picture h2 {
-                color: white;
+            #postmessage .content {
+                font-size: 0.8em;
             }
         </style>
     </section>
 
-    <section class="slide">
-        <h2 class="shout shrink">You can even shout this way</h2>
+    <section class="slide" id="postmessage2">
+        <h2>Пример. Закинем инфомрацию в iframe</h2>
+<pre style='color:#000000;background:#ffffff;'>
+<code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>iframe</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"http://example.com"</span><span style='color:#274796; '> </span><span style='color:#074726; '>name</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"example"</span><span style='color:#a65700; '>></span></code>
+<code>&nbsp;</code>
+<code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></code>
+<code>&nbsp;&nbsp;<span style='color:#800000; font-weight:bold; '>let</span> win <span style='color:#808030; '>=</span> window<span style='color:#808030; '>.</span>frames<span style='color:#808030; '>.</span>example<span style='color:#800080; '>;</span></code>
+<code>&nbsp;&nbsp;win<span style='color:#808030; '>.</span>postMessage<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>message</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>http://example.com</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code>
+<code><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></code>
+</pre>
     </section>
+
+<section class="slide" id="postmessage_example">
+<h2>Пример. Ловим информацию в iframe</h2>
+<pre style='color:#000000;background:#ffffff;'>
+<code>window<span style='color:#808030; '>.</span>addEventListener<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>message</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>function</span><span style='color:#808030; '>(</span>event<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span></code>
+<code>&nbsp;&nbsp;<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>event<span style='color:#808030; '>.</span>origin <span style='color:#808030; '>!=</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>http://ilovedraw.com</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span></code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#696969; '>// что-то пришло с неизвестного домена. Проигнорируем это</span></code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#800000; font-weight:bold; '>return</span><span style='color:#800080; '>;</span></code>
+<code>&nbsp;&nbsp;<span style='color:#800080; '>}</span></code>
+<code>&nbsp;&nbsp;<span style='color:#800000; font-weight:bold; '>alert</span><span style='color:#808030; '>(</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>received: </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> event<span style='color:#808030; '>.</span>data <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code>
+<code>&nbsp;&nbsp;<span style='color:#696969; '>// can message back using event.source.postMessage(...)</span></code>
+<code><span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code>
+</pre>
+<style>
+    #postmessage_example code {
+        font-size: 0.8em;
+    }
+</style>
+</section>
+
+<section class="slide">
+    <h2>Тут будет демка</h2>
+    <p>// TODO</p>
+</section>
+
+<section class="slide">
+    <h2>Сила iframe 🤟🏻</h2>
+    <ul>
+        <li>Вам требуется создать виджет для встраивания на другие сайты?</li>
+        <li>Это может быть от прогноза погоды до покупки авиа-билетов</li>
+        <li>Все бы ничего, но кроссдоменные запросы...</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <div class="center">
+        <img src="pictures/slide_rbs/gate.jpg" alt="" height="480px"/>
+    </div>
+</section>
+
+
+<section class="slide">
+    <h2>Порталы</h2>
+    <p>// TODO</p>
+</section>
 
     <section class="slide">
         <h2>Demo!</h2>
@@ -475,7 +518,7 @@
         <div class="col_right">
             <ul>
                 <li>Instagram: <a href="https://instagram.com/chak.andrey">chak.andrey</a></li>
-                <li>Telegram: <a href="https://t.me/AndreyKuznetsof">AndreyKuznetsof</a></li>
+                <li>Telegram: <a href="https://t.me/and_kuznetsov">and_kuznetsov</a></li>
                 <li>Facebook: <a href="https://www.facebook.com/and.kuznetsov/">and.kuznetsov</a></li>
             </ul>
         </div>
