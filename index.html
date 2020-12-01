@@ -166,10 +166,6 @@
 </pre>
         <table>
             <tr>
-                <th scope="col">Значение</th>
-                <th>Описание</th>
-            </tr>
-            <tr>
                 <th scope="row">(пустое значение)</th>
                 <td>Включить все ограничения</td>
             </tr>
@@ -283,9 +279,7 @@
         <ul>
             <li>Многие сайты были взломаны подобным способом, включая Twitter, Facebook, Paypal и другие.</li>
             <li class="next">Clickjacking-атака для кликов мыши, а не для клавиатуры</li>
-            <li class="next">С одной стороны — эта атака «неглубокая», ведь хакер перехватывает только один клик. Но с другой стороны, если хакер
-            знает, что после этого клика появятся другие элементы управления, то он может хитростью заставить пользователя кликнуть
-            на них.</li>
+            <li class="next">С одной стороны — эта атака «неглубокая», ведь хакер перехватывает только один клик</li>
         </ul>
     </section>
 
@@ -306,7 +300,7 @@
     </section>
 
     <section class="slide" id="clickjacking_div">
-        <h2>Защита. Закроемся div</h2>
+        <h2 class="margin0">Защита. Закроемся div</h2>
 <pre style='color:#000000;background:#ffffff;'>
 <code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>style</span><span style='color:#a65700; '>></span>
 <code>&nbsp;&nbsp;<span style='color:#808030; '>#</span>protector <span style='color:#800080; '>{</span></code>
@@ -325,7 +319,7 @@
 </pre>
 <style>
     #clickjacking_div pre {
-            font-size: 0.5em;
+            font-size: 0.6em;
         }
     #clickjacking_div pre code {
         white-space: normal;
@@ -334,9 +328,9 @@
     </section>
 
     <section class="slide">
-        <h2 class="">Ленивая загрузка</h2>
+        <h2 class="margin0">Ленивая загрузка</h2>
         <div class="center">
-            <img src="pictures/slide_lazy/lazy.jpg" alt="" width="600px"/>
+            <img src="pictures/slide_lazy/lazy.jpg" alt="" width="690px"/>
         </div>
     </section>
 
@@ -358,7 +352,7 @@
             </tr>
         </table>
         <p class="note">
-            *auto в настоящее время является нестандартизированным значением, но по умолчанию именно это значение использует Chrome. Google намерен внести предложение по этому значению в таблицу стандартов.
+            *auto в настоящее время является нестандартизированным значением
         </p>
     </section>
 
@@ -403,7 +397,7 @@
     </section>
 
     <section class="slide" id="postmessage2">
-        <h2>Пример. Закинем инфомрацию в iframe</h2>
+        <h2>Пример. Закинем информацию в iframe</h2>
 <pre style='color:#000000;background:#ffffff;'>
 <code><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>iframe</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"http://example.com"</span><span style='color:#274796; '> </span><span style='color:#074726; '>name</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"example"</span><span style='color:#a65700; '>></span></code>
 <code>&nbsp;</code>
@@ -449,9 +443,17 @@
 
 <section class="slide">
     <div class="center">
+        <img src="pictures/slide_rbs/pay-buttons.jpg" alt="" height="380px"/>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="center">
         <img src="pictures/slide_rbs/gate.jpg" alt="" height="480px"/>
     </div>
 </section>
+
+
 
 
 <section class="slide">
