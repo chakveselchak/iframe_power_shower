@@ -427,9 +427,57 @@
 </style>
 </section>
 
-<section class="slide">
-    <h2>Тут будет демка</h2>
-    <p>// TODO</p>
+<section class="slide" id="slide_demo1">
+    <h2>Демо</h2>
+    <iframe src="https://takiepirogi.com" id="iframeTakiepirogi"></iframe>
+
+    <div class="row">
+        <h3>Цвет iframe</h3>
+    </div>
+    <div class="row">
+        <button class="btn white" id="demoBtnGreen">Зеленый</button>
+        <button class="btn black" id="demoBtnRed">Красный</button>
+    </div>
+
+    <style>
+        #iframeTakiepirogi {
+            width: 100%
+        }
+    </style>
+    <script>
+        var slide = document.getElementById('slide_demo1');
+        var btnGreen = document.getElementById('demoBtnGreen');
+        var btnRed = document.getElementById('demoBtnRed');
+        var iframeTakiepirogi = document.getElementById('iframeTakiepirogi');
+
+        window.addEventListener('message', function(e) {
+            if (e.origin != 'https://takiepirogi.com') {
+                return;
+            }
+            switch(e.data) {
+                case 'green':
+                    slide.style.backgroundColor = "#74C960";
+                    break;
+
+                case 'blue':
+                    slide.style.backgroundColor = "#53BBFF";
+                    break;
+
+                case 'red':
+                    slide.style.backgroundColor = "#E24C4C";
+                    break;
+
+                default:
+                    slide.style.backgroundColor = "#fff";
+            }
+        });
+        btnGreen.addEventListener('click', function(e) {
+            window.postMessage('green', '*');
+        })
+        btnRed.addEventListener('click', function(e) {
+            window.postMessage('red', '*');
+        });
+    </script>
 </section>
 
 <section class="slide">
