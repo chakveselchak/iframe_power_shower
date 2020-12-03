@@ -219,7 +219,7 @@
                 position: absolute;
                 font-size: 14px;
                 z-index: 10;
-                top: 226px;
+                top: 245px;
                 left: 336px;
                 width: 114px;
                 text-align: center;
@@ -257,7 +257,7 @@
                 position: absolute;
                 font-size: 14px;
                 z-index: 10;
-                top: 226px;
+                top: 245px;
                 left: 336px;
                 width: 114px;
                 text-align: center;
@@ -448,7 +448,7 @@
         var slide = document.getElementById('slide_demo1');
         var btnGreen = document.getElementById('demoBtnGreen');
         var btnRed = document.getElementById('demoBtnRed');
-        var iframeTakiepirogi = document.getElementById('iframeTakiepirogi');
+        var iframeTakiepirogi = document.getElementById('iframeTakiepirogi').contentWindow;
 
         window.addEventListener('message', function(e) {
             if (e.origin != 'https://takiepirogi.com') {
@@ -472,10 +472,10 @@
             }
         });
         btnGreen.addEventListener('click', function(e) {
-            window.postMessage('green', '*');
+            iframeTakiepirogi.postMessage('green', '*');
         })
         btnRed.addEventListener('click', function(e) {
-            window.postMessage('red', '*');
+            iframeTakiepirogi.postMessage('red', '*');
         });
     </script>
 </section>
@@ -491,8 +491,49 @@
 
 <section class="slide">
     <div class="center">
-        <img src="pictures/slide_rbs/pay-buttons.jpg" alt="" height="380px"/>
+        <img src="pictures/slide_rbs/pay-buttons.jpg" alt="" width="880px"/>
     </div>
+</section>
+
+<section class="slide" id="pay-buttons1">
+    <div class="center">
+        <div class="mark_border"></div>
+        <img src="pictures/slide_rbs/pay-buttons.jpg" alt="" class="poster" />
+    </div>
+
+    <style>
+        #pay-buttons1 .poster {
+            position: relative;
+            width: 880px;
+            top: 0;
+            transition: all .4s;
+        }
+        #pay-buttons1 .mark_border {
+            border-color: rgba(255, 255, 255, 0);
+            border-radius: 5px;
+            opacity: 0;
+            width: 400px;
+            height: 550px;
+            z-index: 999;
+            left: -350px;
+            top: -490px;
+            display: block;
+            position: absolute;
+            border: 500px solid ;
+            transition: all 5s;
+        }
+
+        #pay-buttons1.active .poster {
+            position: relative;
+            top: -110px;
+            width: 1500px;
+        }
+
+        #pay-buttons1.active .mark_border {
+            border-color: rgba(0, 0,0 , 0.7);
+            opacity: 1;
+        }
+    </style>
 </section>
 
 <section class="slide">
@@ -502,16 +543,37 @@
 </section>
 
 
-
-
-<section class="slide">
+<section class="slide" id="portals">
     <h2>Порталы</h2>
-    <p>// TODO</p>
+    <pre style='color:#000000;background:#ffffff;'>
+        <code><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>portal</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://blog.codepen.io/radio/"</span><span style='color:#274796; '> </span><span style='color:#074726; '>id</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"portal"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#5f5035; '>portal</span><span style='color:#a65700; '>></span></code>
+    </pre>
+
+
+<pre style='color:#000000;background:#ffffff;'>
+<code><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span></code>
+<code>portal<span style='color:#808030; '>.</span>activate<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></code>
+<code><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span><span style='color:#808030; '>.</span></code>
+</pre>
+
+    <a href="https://uskay-portals-demo.glitch.me/">Дeмо красивого перехода</a><br/>
+    <a href="https://github.com/WICG/portals/tree/master/demos/portal-embed-demo">Демо с порталом как всплывающий контент</a>
+
+    <style>
+        #portals code {
+            font-size: 0.8em;
+        }
+    </style>
+</section>
+<section class="slide" id="portal_video">
+    <div class="center">
+        <video src="pictures/portals.mp4" width="70%" controls="controls"></video>
+    </div>
 </section>
 
     <section class="slide">
-        <h2>Demo!</h2>
-        <portal src="https://securepayments.sberbank.ru/mportal3" id="portal"></portal>
+        <h2>Демка!</h2>
+        <portal src="https://blog.codepen.io/radio/" id="portal"></portal>
         <script>
             const portal = document.getElementById('portal');
             portal.addEventListener('click', evt => {

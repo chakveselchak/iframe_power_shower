@@ -448,7 +448,7 @@
         var slide = document.getElementById('slide_demo1');
         var btnGreen = document.getElementById('demoBtnGreen');
         var btnRed = document.getElementById('demoBtnRed');
-        var iframeTakiepirogi = document.getElementById('iframeTakiepirogi');
+        var iframeTakiepirogi = document.getElementById('iframeTakiepirogi').contentWindow;
 
         window.addEventListener('message', function(e) {
             if (e.origin != 'https://takiepirogi.com') {
@@ -472,10 +472,10 @@
             }
         });
         btnGreen.addEventListener('click', function(e) {
-            window.postMessage('green', '*');
+            iframeTakiepirogi.postMessage('green', '*');
         })
         btnRed.addEventListener('click', function(e) {
-            window.postMessage('red', '*');
+            iframeTakiepirogi.postMessage('red', '*');
         });
     </script>
 </section>
