@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100"><path fill="#c00" d="M0 0h50v100L25 80 0 100"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="100px" viewBox="0 0 50 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ribbon</title>
+    <defs>
+        <linearGradient x1="50.002%" y1="-0.012%" x2="50.002%" y2="99.984%" id="linearGradient-1">
+            <stop stop-color="#006BE1" offset="0%"></stop>
+            <stop stop-color="#00B9B7" offset="99.9232341%"></stop>
+            <stop stop-color="#00E99E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ribbon" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <polyline id="Path" points="0 0 50 0 50 100 25 80 0 100"></polyline>
+        </g>
+    </g>
+</svg>
