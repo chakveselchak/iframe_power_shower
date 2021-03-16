@@ -6,6 +6,26 @@
  */
 (function () {
     'use strict';
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
 
     const EVENT_TARGET = Symbol('EventTarget');
 
@@ -157,6 +177,25 @@
     };
 
     var keys = (shower) => {
+        if (isMobile.any()) {
+            // swiped-left
+            document.addEventListener('swiped-left', function(e) {
+                e.preventDefault();
+                
+                shower.next(e.shiftKey);
+            });
+            // swiped-right
+            document.addEventListener('swiped-right', function(e) {
+                e.preventDefault();
+                shower.prev(e.shiftKey);
+            });
+            // swiped-up
+            document.addEventListener('swiped-up', function(e) {
+                e.preventDefault();
+                shower.exitFullMode();
+            });
+
+        }
         const doSlideActions = (event) => {
             const isShowerAction = !(event.ctrlKey || event.altKey || event.metaKey);
 
