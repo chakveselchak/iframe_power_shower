@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="81px" viewBox="0 0 150 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo_color</title>
+    <defs>
+        <linearGradient x1="0.004%" y1="49.986%" x2="100%" y2="49.986%" id="linearGradient-1">
+            <stop stop-color="#006BE1" offset="0%"></stop>
+            <stop stop-color="#00B9B7" offset="63.26%"></stop>
+            <stop stop-color="#00E99E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo_color" fill-rule="nonzero">
+            <path d="M124.08,18.25 L123.78,17.52 L69.42,17.1 C68.56,17.09 67.79,16.57 67.46,15.78 L62.18,3 C61.6,1.59 62.64,0.04 64.17,0.049951867 L142.29,0.59 C143.15,0.6 143.92,1.12 144.25,1.91 L149.61,14.88 C149.94,15.67 149.76,16.59 149.15,17.2 L94.16,72.7 C93.09,73.78 91.25,73.42 90.67,72.01 L85.39,59.23 C85.06,58.44 85.24,57.52 85.85,56.91 L124.08,18.25 Z" id="Path" fill="url(#linearGradient-1)"></path>
+            <circle id="Oval" fill="#00DFB6" opacity="0.1" cx="11.93" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.1" cx="8.11" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.2" cx="13.21" cy="48.27" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.1" cx="4.24" cy="57.62" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.2" cx="24.53" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.2" cx="20.76" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#00DFB6" opacity="0.2" cx="16.89" cy="57.62" r="4.09"></circle>
+            <circle id="Oval" fill="#00C2C4" opacity="0.4" cx="25.94" cy="48.27" r="4.09"></circle>
+            <circle id="Oval" fill="#00D6BA" opacity="0.4" cx="37.13" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#00D6BA" opacity="0.4" cx="33.49" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#00C2C4" opacity="0.4" cx="22" cy="38.89" r="4.09"></circle>
+            <circle id="Oval" fill="#00D6BA" opacity="0.4" cx="49.73" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#00D6BA" opacity="0.4" cx="46.22" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#28A4D3" opacity="0.6" cx="34.73" cy="38.89" r="4.09"></circle>
+            <circle id="Oval" fill="#28A4D3" opacity="0.6" cx="30.7" cy="29.5" r="4.09"></circle>
+            <circle id="Oval" fill="#00BBC8" opacity="0.6" cx="62.33" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#00BBC8" opacity="0.6" cx="58.84" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#3299D8" opacity="0.8" cx="43.31" cy="29.5" r="4.09"></circle>
+            <circle id="Oval" fill="#3299D8" opacity="0.8" cx="39.28" cy="19.98" r="4.09"></circle>
+            <circle id="Oval" fill="#27A5D3" opacity="0.8" cx="74.94" cy="76.31" r="4.09"></circle>
+            <circle id="Oval" fill="#27A5D3" opacity="0.8" cx="71.11" cy="67.01" r="4.09"></circle>
+            <circle id="Oval" fill="#4380E3" cx="51.56" cy="19.98" r="4.09"></circle>
+            <circle id="Oval" fill="#4380E3" cx="47.66" cy="10.47" r="4.09"></circle>
+        </g>
+    </g>
+</svg>
